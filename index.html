@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Online Medicine Catalogue</title>
+
+    <!-- Metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Online Medicine Catalogue">
+    <meta name="author" content="Saptarshi Ghosh">
+    <link rel="icon" href="img/favicon.png">
+
+
+    <!-- CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/jumbotron.css" rel="stylesheet">
+    <link href="css/material.css" rel="stylesheet">
+
+    <!-- Javascript -->
+     <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+   
+
+    <!-- Additional Styles -->
+    <style type="text/css">
+        #responsecontainer {
+            max-width: 800px;
+            max-height: 700px;
+            height: auto;
+            align-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: auto;
+            overflow-x:hidden;
+            margin: 0 auto;
+
+        }
+    </style>
+
+    <!-- Javascript -->
+    <script type="text/javascript">
+
+    $(document).ready(function() {
+
+        $('#Keyword').keypress(function(e){
+            if(e.keyCode==13)
+                $('#search').click();
+        });
+        
+
+         $("#search").click(function() {                
+    		var Sradio = $(".sradio:checked").val();
+    		
+            $.ajax({
+                type: "POST",
+                url: "table.php",        
+                dataType: "html",
+                data: {
+                    Keyword: $("#Keyword").val(),
+                    Sradio
+                },
+                cache: false,               
+                success: function(data) {                    
+                    $("#responsecontainer").html(data); 
+                }
+
+            });
+        });
+    });
+
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Navigation</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Admin.html">Admin CP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="user.php">Log - In</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+
+    <!-- Main WebPage -->
+    <div class="jumbotron">
+        <h3 class="display-4" align="center">Online Medical Catalogue</h3>
+      	<br /><br /><br />
+      	<p> Enter the Keyword to searched for... </p>
+      	<p> Select what to search for Medicine, Company, or Generic Drugs </p>
+      	<br /><br />
+
+
+
+        <div class="form-group" style="width: 500px; margin: 0 auto;">
+            <input type="text"  name="Keyword" required="required" id="Keyword">
+            <label class="control-label" for="input" style="">Enter the Keyword</label>
+
+             <i class="bar" style="max-width: 500px;"></i>
+    
+            <button id="search" class="button" type="button" style="position: relative;right: -600px; margin: -50px; float: left; ">
+                <span>Search &raquo;</span>
+            </button>
+
+            
+            <div class="form-radio">
+            	<div class="radio">
+            		<label>
+            		<input type="radio" name="sradio" class="sradio" value="medicine" checked="checked">
+            		<i class="helper"></i>
+            		Medicine
+            		</label>
+        		</div>
+        		<div class="radio">
+            		<label>
+            		<input type="radio" name="sradio" class="sradio" value="company">
+            		<i class="helper"></i>
+            		Company
+            		</label>
+        		</div>
+        		<div class="radio">
+            		<label>
+            		<input type="radio" name="sradio" class="sradio" value="generic">
+            		<i class="helper"></i>
+            		Generic Drug
+            		</label>
+        		</div>
+        		<div class="radio">
+            		<label>
+            		<input type="radio" name="sradio" class="sradio" value="pharm">
+            		<i class="helper"></i>
+            		Pharmacies
+            		</label>
+        		</div>
+        	</div>
+        </div>
+
+
+
+
+        <!-- Stores the PHP returned Table -->
+        <div id="responsecontainer" style="margin-top: 50px;">
+        </div>
+
+
+
+      <br />
+      <br />
+
+      <center>Displaying Table Above</center>
+
+      <br />
+      <br />
+    </div>
+    
+
+</body>
+</html>

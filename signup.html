@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+
+	<!-- Metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Online Medicine Catalogue">
+    <meta name="author" content="Saptarshi Ghosh">
+    <link rel="icon" href="img/favicon.png">
+
+	<!--CSS-->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/jumbotron.css" rel="stylesheet">
+	<link href="css/material.css" rel="stylesheet">
+
+	<!-- Javascript -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+   
+
+<title>Sign-Up</title>
+</head>
+
+<body>
+
+
+	<!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Navigation</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Admin.html">Admin CP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="user.php">Log - In</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <br /><br /><br /><br />
+    <h3 class="display-4" align="center">Sign Up!</h3>
+
+    <!-- Main WebPage -->
+   <link href="css/style.css" rel="stylesheet">
+<div id="Sign-Up" class="formsign" style="width: 70%; margin-left: 17%; margin-top: 100px;">
+<fieldset style=""><legend>Registration Form</legend>
+<table border="0">
+<tr>
+<form method="POST" action="sign-up.php" style="" class="formsign">
+<td>First Name</td><td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="fname" required="required"></td>
+</tr>
+<tr>
+<td>Last Name</td><td> <input type="text" name="lname" required="true"></td>
+</tr>
+<tr>
+<td>Email</td><td> <input type="email" name="email" required="true"></td>
+</tr>
+<tr>
+<td>Password</td><td> <input type="password" name="pass" required="true"></td>
+</tr>
+<tr>
+	<td>Type Of User </td><td><input type="radio" name="type" value="normal" checked> Self-Use<br>
+		<input type="radio" name="type" value ="reseller"> Reseller
+	</td></tr>
+<tr>
+<td>Mobile Number</td><td> <input type="number" name="mno" required="true"></td>
+</tr>
+<tr>
+	<td>Date of Birth </td><td><input type="date" name="dob" required="true"></td>
+</tr>
+<tr>
+<td>Gender </td><td><input type="radio" name="gender" value="M" checked> Male<br>
+  <input type="radio" name="gender" value="F"> Female<br>
+  <input type="radio" name="gender" value="O"> Other
+</td></tr>
+<tr>
+<td>House Number </td><td><input type="text" name="hno" required="true"></td>
+</tr>
+<tr>
+<td>PIN</td><td><input type="number" name="pin" required="true"></td>
+</tr>
+<tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<td><input id="button" class="btn btn-danger" type="submit" style="margin-left: 100px;" name="submit" value="Sign-Up" title="Sign Up"></td>
+</tr>
+</form>
+</table>
+</fieldset>
+</div>
+
+
+</body>
+</html>
